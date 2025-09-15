@@ -104,7 +104,7 @@ Este proyecto es una API para la gestión de tareas, desarrollada en **Laravel**
 
 4. Construye y levanta los contenedores:
    ```bash
-   docker compose up --build
+   docker compose up --build -d
    ```
 
 5. Accede a la API desde tu navegador o Postman:
