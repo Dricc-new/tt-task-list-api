@@ -77,6 +77,62 @@ Este proyecto es una API para la gestión de tareas, desarrollada en **Laravel**
 
 ---
 
+## 🐳 Instalación y arranque con Docker (Windows/Linux/MacOS)
+
+1. Clona el repositorio:
+   ```bash
+   git clone https://github.com/Dricc-new/tt-task-list-api.git
+   cd tt-task-list-api
+   ```
+
+2. Copia el archivo de entorno:
+   ```bash
+   cp .env.example .env
+   ```
+
+3. Configura la base de datos en `.env` (solo modifica lo necesario):
+   ```env
+   DB_CONNECTION=mysql
+   DB_HOST=db
+   DB_PORT=3306
+   DB_DATABASE=nombre_db
+   DB_USERNAME=usuario
+   DB_PASSWORD=contraseña
+   ```
+
+   > ⚠️ Nota: `DB_HOST=db` debe coincidir con el nombre del servicio de MySQL en `docker-compose.yml`.
+
+4. Construye y levanta los contenedores:
+   ```bash
+   docker compose up --build
+   ```
+
+5. Accede a la API desde tu navegador o Postman:
+   ```
+   http://localhost:8090
+   ```
+   > ⚠️ Nota: Puedes campiar el puerto en el docker-compose.yml, yo uso el 8090 porque uso Nginx-Proxy-Manager y ya tengo servicios alojados en el puerto 8000
+
+6. (Opcional) Ejecutar migraciones manualmente:
+
+   ```bash
+   docker compose exec app php artisan migrate
+   ```
+
+7. (Opcional) Ejecutar seeders:
+
+   ```bash
+   docker compose exec app php artisan db:seed
+   ```
+
+8. Detener los contenedores cuando termines:
+   
+   ```bash
+   docker compose down
+   ```
+
+---
+
 ## 🔗 Endpoints disponibles
 
 | Método | URL                  | Descripción                                                      |
