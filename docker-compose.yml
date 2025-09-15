@@ -7,8 +7,6 @@ services:
     restart: unless-stopped
     ports:
       - "8090:80"
-    volumes:
-      - .:/var/www/html:cached
 
   db:
     image: mysql:8.0
