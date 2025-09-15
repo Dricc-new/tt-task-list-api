@@ -21,7 +21,7 @@ RUN sed -ri -e 's!/var/www/!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.conf
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 COPY composer.json composer.lock /var/www/html/
-RUN composer install --no-scripts --no-autoloader --no-interaction --prefer-dist
+RUN composer install --no-scripts --no-interaction --prefer-dist
 
 COPY . /var/www/html
 
